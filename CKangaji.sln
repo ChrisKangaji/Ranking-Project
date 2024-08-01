@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKangaji.Server", "CKangaji.Server\CKangaji.Server.csproj", "{23171086-46F9-43B5-90AB-0F956359838A}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "ckangaji.client", "ckangaji.client\ckangaji.client.esproj", "{B9F0E86C-11F6-427C-9C0A-28193CFB498B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23171086-46F9-43B5-90AB-0F956359838A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23171086-46F9-43B5-90AB-0F956359838A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23171086-46F9-43B5-90AB-0F956359838A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23171086-46F9-43B5-90AB-0F956359838A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9F0E86C-11F6-427C-9C0A-28193CFB498B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9F0E86C-11F6-427C-9C0A-28193CFB498B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9F0E86C-11F6-427C-9C0A-28193CFB498B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B9F0E86C-11F6-427C-9C0A-28193CFB498B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9F0E86C-11F6-427C-9C0A-28193CFB498B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9F0E86C-11F6-427C-9C0A-28193CFB498B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D1ED19F1-8549-4033-B17F-08DE5CB20B6F}
+	EndGlobalSection
+EndGlobal

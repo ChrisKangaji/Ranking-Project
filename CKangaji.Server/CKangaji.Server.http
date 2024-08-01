@@ -1,0 +1,6 @@
+@CKangaji.Server_HostAddress = http://localhost:5044
+
+GET {{CKangaji.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
