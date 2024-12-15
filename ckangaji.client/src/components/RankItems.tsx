@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-const RankItems = () => {
+const RankItems: React.FC = () => {
 
     const [items, setItems] = useState<any[]>([]);
     const itemType = 1;
-
+    
     useEffect(() => {
 
         fetch(`item/${itemType}`)
