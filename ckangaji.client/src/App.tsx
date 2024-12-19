@@ -1,12 +1,26 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import NavMenu from './components/NavMenu';
+import AppRoutes from './AppRoutes.tsx'
+
+import 'bootstrap/dist/css/bootstrap.css'
 
 const App: React.FC = () => {
 
     return (
-        <div>
-            <h1 id="helloWorld">Hello World</h1>
-            <p>This is where we start.</p>
-        </div>
+        <BrowserRouter>
+            <header>
+                <NavMenu />
+            </header>
+
+            <main>
+                <AppRoutes />
+            </main>
+
+            <footer>
+
+            </footer>
+        </BrowserRouter>
     );
 }
 
