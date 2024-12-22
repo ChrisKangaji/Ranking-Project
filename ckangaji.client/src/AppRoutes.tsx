@@ -14,8 +14,8 @@ const AppRoutes: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             {/* Catch-all route for undefined paths */}
-            <Route path="/NotFound" element={<NotFound />} />
             <Route path="/rankItems" element={<RankItems />} />
+            <Route path="/NotFound" element={<NotFound />} />
         </Routes>
     );
 };

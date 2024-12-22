@@ -19,11 +19,11 @@ const RankItems: React.FC = () => {
     }, []);
 
     return (
-        <main>
+        <div className="container">
             {
                 (items.length > 0) ? items.map((item) => <h3>{ item.title } </h3>) : <div>Loading...</div>
             }
-        </main>
+        </div>
     );
 }
 
