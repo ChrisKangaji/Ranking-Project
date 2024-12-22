@@ -15,8 +15,8 @@ const NavMenu: React.FC = () => {
                         <img
                             src={ReactLogo}
                             alt="CK"
-                            width={40}
-                            height={30}
+                            width={60}
+                            height={40}
                         />
                     </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

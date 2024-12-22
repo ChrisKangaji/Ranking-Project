@@ -25,7 +25,7 @@ const App: React.FC = () => {
                 <NavMenu />
             </header>
 
-            <main style={{ paddingTop: `95px` }}> 
+            <main style={{ paddingTop: `100px` }}> 
                 <AppRoutes />
             </main>
 
