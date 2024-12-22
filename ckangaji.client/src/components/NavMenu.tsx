@@ -1,13 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Link is used for navigation
 
+import ReactLogo from '../assets/ck_logo.png';
+
 // Optional: Add a style or CSS className for styling
 const NavMenu: React.FC = () => {
+
+
+
     return (
         <nav className="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark">
                 <div className="container">
                     <Link to="/" className="navbar-brand">
-                        ChrisK 1
+                        <img
+                            src={ReactLogo}
+                            alt="CK"
+                            width={40}
+                            height={30}
+                        />
                     </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
