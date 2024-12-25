@@ -4,6 +4,7 @@ import NavMenu from './components/NavMenu';
 import AppRoutes from './AppRoutes.tsx'
 
 import 'bootstrap/dist/css/bootstrap.css'
+import './App.css'
 
 const App: React.FC = () => {
     //Use a dynamics value for applying padding to the main content
