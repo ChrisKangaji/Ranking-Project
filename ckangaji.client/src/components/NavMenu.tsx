@@ -43,7 +43,12 @@ const NavMenu: React.FC = () => {
                                 <Link to="/RankItems" className="nav-link">
                                     Rank Items
                                 </Link>
-                            </li>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/Testing" className="nav-link">
+                                Testing Page
+                            </Link>
+                        </li>
                         </ul>
                     </div>
                 </div>

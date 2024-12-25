@@ -6,6 +6,7 @@ import Home from './components/Home';
 import About from './components/About';
 import NotFound from './components/NotFound';
 import RankItems from './components/RankItems';
+import Testing from './components/Testing';
 
 // Define your routes as a functional component
 const AppRoutes: React.FC = () => {
@@ -16,6 +17,7 @@ const AppRoutes: React.FC = () => {
             {/* Catch-all route for undefined paths */}
             <Route path="/rankItems" element={<RankItems />} />
             <Route path="/NotFound" element={<NotFound />} />
+            <Route path="/Testing" element={<Testing />} />
         </Routes>
     );
 };
