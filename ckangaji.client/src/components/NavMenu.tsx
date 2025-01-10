@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Link is used for navigation
 
-import ReactLogo from '../assets/ck_logo.png';
+import RankingLogo from '../assets/ranking_logo.png';
 
 // Optional: Add a style or CSS className for styling
 const NavMenu: React.FC = () => {
@@ -13,10 +13,10 @@ const NavMenu: React.FC = () => {
                 <div className="container">
                     <Link to="/" className="navbar-brand">
                         <img
-                            src={ReactLogo}
-                            alt="CK"
-                            width={60}
-                            height={40}
+                            src={RankingLogo}
+                            alt="Ranking"
+                            width={100}
+                            height={70}
                         />
                     </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,19 +34,19 @@ const NavMenu: React.FC = () => {
                                     About
                                 </Link>
                             </li>
-                            <li className="nav-item">
-                                <Link to="/NotFound" className="nav-link">
-                                    Not Found
-                                </Link>
-                            </li>
+                            {/*<li className="nav-item">*/}
+                            {/*    <Link to="/NotFound" className="nav-link">*/}
+                            {/*        Not Found*/}
+                            {/*    </Link>*/}
+                            {/*</li>*/}
                             <li className="nav-item">
                                 <Link to="/RankItems" className="nav-link">
-                                    Rank Items
+                                    Rank Movies
                                 </Link>
                         </li>
                         <li className="nav-item">
                             <Link to="/Testing" className="nav-link">
-                                Testing Page
+                                Rank Music
                             </Link>
                         </li>
                         </ul>

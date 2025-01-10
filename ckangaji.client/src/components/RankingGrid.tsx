@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RankingGrid: React.FC = ({items, imgArr}) => {
+const RankingGrid: React.FC = ({ items, imgArr, dragStartHandler, allowDrop, dropHandler}) => {
 
     const rankingGrid: any[] = [];
     const cellCollectionTop: any[] = [];
@@ -11,7 +11,10 @@ const RankingGrid: React.FC = ({items, imgArr}) => {
     function pushCellMarkupToArr(cellCollection: any[], rankNum: number, rowLabel: string) {
         if (rankNum > 0) {
             var item = items.find(o => o.ranking === rankNum);
-            cellCollection.push(<div id={`rank-${rankNum}`} className = "rank-cell"></div>);
+            cellCollection.push(<div id={`rank-${rankNum}`} onDrop={dropHandler} onDragOver={allowDrop} className="rank-cell">
+                {(item != null) ? <img id={`item-${item.id}`} src={imgArr.find(o => o.id === item.imageId)?.image} draggable="true" onDragStart={dragStartHandler} /> 
+                                : null}
+            </div>);
         }
         else {
 
