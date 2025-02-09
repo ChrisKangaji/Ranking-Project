@@ -6,7 +6,7 @@ const ItemCollection = ({ items, dragStartHandler, imgArr }) => {
         <div className="items-not-ranked">
             {
                 items.map((item) => (item.ranking === 0) ?
-                    <Item item={item} dragStartHandler={dragStartHandler} itemImgObj={imgArr.find(o => o.id === item.imageId)} />
+                    <Item key={`item-${item.id}`} item={item} dragStartHandler={dragStartHandler} itemImgObj={imgArr.find(o => o.id === item.imageId)} />
                     : null
                 )
             }
