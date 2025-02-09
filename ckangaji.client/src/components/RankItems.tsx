@@ -1,24 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import MovieImageArr from './MovieImages.tsx';
+import React, { useEffect } from 'react';
 import RankingGrid from './RankingGrid.tsx';
 import ItemCollection from './ItemCollection.tsx';
 
-const RankItems: React.FC = () => {
+interface RankItemsProps {
+    items: any[];  // Define the expected props
+    setItems: React.Dispatch<any>;
+    dataType: number;
+    imgArr: any[];
+    localStorageKey: string;
+}
 
-    const [items, setItems] = useState<any[]>([]);
-    const itemType = 1;
-
-    function dragStartHandler(ev)
+const RankItems: React.FC<RankItemsProps> = ({items, setItems, dataType, imgArr, localStorageKey}) => {
+    function dragStartHandler(ev: any)
     {
         ev.dataTransfer.setData("text", ev.target.id);
     }
 
-    function allowDrop(ev)
+    function allowDrop(ev: any)
     {
         ev.preventDefault();
     }
 
-    function dropHandler(ev)
+    function dropHandler(ev: any)
     {
         ev.preventDefault();
         const targetElement = ev.target;
@@ -45,7 +48,7 @@ const RankItems: React.FC = () => {
     
     useEffect(() => {
 
-        fetch(`item/${itemType}`)
+        fetch(`item/${dataType}`)
             .then((result) => {
                 return result.json();
             })
@@ -54,13 +57,22 @@ const RankItems: React.FC = () => {
             })
             .catch(error => console.error('Error fetching data:', error));
 
-    }, []);
+    }, [dataType]);
+
+    useEffect(() => {
+        if (items != null)
+        {
+            localStorage.setItem(localStorageKey, JSON.stringify(items));
+        }
+    },[items]);
 
     return (
-        <div className="container">
-            <RankingGrid items={items} imgArr={MovieImageArr} dragStartHandler={dragStartHandler} allowDrop={allowDrop} dropHandler={dropHandler} />
-            <ItemCollection items={items} dragStartHandler={dragStartHandler} imgArr={MovieImageArr} />
-        </div>
+        (items != null) ? 
+            <div className="container">
+                <RankingGrid items={items} imgArr={imgArr} dragStartHandler={dragStartHandler} allowDrop={allowDrop} dropHandler={dropHandler} />
+                <ItemCollection items={items} dragStartHandler={dragStartHandler} imgArr={imgArr} />
+            </div>
+            : <div className = "container">Loading...</div>
     );
 }
 

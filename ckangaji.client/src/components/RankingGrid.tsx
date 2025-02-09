@@ -1,6 +1,14 @@
 import React from 'react';
 
-const RankingGrid: React.FC = ({ items, imgArr, dragStartHandler, allowDrop, dropHandler}) => {
+interface RankingGridProps {
+    items: { id: number; ranking: number; imageId: number }[]; // Adjust based on actual item structure
+    imgArr: { id: number; image: string }[];  // Adjust based on actual image object structure
+    dragStartHandler: (event: React.DragEvent<HTMLImageElement>) => void;
+    allowDrop: (event: React.DragEvent<HTMLDivElement>) => void;
+    dropHandler: (event: React.DragEvent<HTMLDivElement>) => void;
+}
+
+const RankingGrid: React.FC<RankingGridProps> = ({ items, imgArr, dragStartHandler, allowDrop, dropHandler}) => {
 
     const rankingGrid: any[] = [];
     const cellCollectionTop: any[] = [];

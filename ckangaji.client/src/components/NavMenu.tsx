@@ -34,21 +34,21 @@ const NavMenu: React.FC = () => {
                                     About
                                 </Link>
                             </li>
+                            <li className="nav-item">
+                                <Link to="/RankMovies" className="nav-link">
+                                    Rank Movies
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/RankAlbums" className="nav-link">
+                                    Rank Music
+                                </Link>
+                            </li>
                             {/*<li className="nav-item">*/}
                             {/*    <Link to="/NotFound" className="nav-link">*/}
                             {/*        Not Found*/}
                             {/*    </Link>*/}
                             {/*</li>*/}
-                            <li className="nav-item">
-                                <Link to="/RankItems" className="nav-link">
-                                    Rank Movies
-                                </Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to="/Testing" className="nav-link">
-                                Rank Music
-                            </Link>
-                        </li>
                         </ul>
                     </div>
                 </div>
