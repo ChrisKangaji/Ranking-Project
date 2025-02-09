@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import RankingGrid from './RankingGrid.tsx';
 import ItemCollection from './ItemCollection.tsx';
 
@@ -11,6 +11,14 @@ interface RankItemsProps {
 }
 
 const RankItems: React.FC<RankItemsProps> = ({items, setItems, dataType, imgArr, localStorageKey}) => {
+
+    const [reload, setReload] = useState(false);
+
+    function Reload()
+    {
+        setReload(true);
+    }
+
     function dragStartHandler(ev: any)
     {
         ev.dataTransfer.setData("text", ev.target.id);
@@ -48,6 +56,15 @@ const RankItems: React.FC<RankItemsProps> = ({items, setItems, dataType, imgArr,
     
     useEffect(() => {
 
+        if (items == null)
+        {
+            getaDataFromAPI();
+        }
+
+    }, [dataType]);
+
+    function getaDataFromAPI()
+    {
         fetch(`item/${dataType}`)
             .then((result) => {
                 return result.json();
@@ -56,21 +73,31 @@ const RankItems: React.FC<RankItemsProps> = ({items, setItems, dataType, imgArr,
                 setItems(data);
             })
             .catch(error => console.error('Error fetching data:', error));
-
-    }, [dataType]);
+    }
 
     useEffect(() => {
         if (items != null)
         {
             localStorage.setItem(localStorageKey, JSON.stringify(items));
         }
-    },[items]);
+        setReload(false);
+    }, [items]);
+
+    useEffect(() => {
+        if (reload)
+        {
+            getaDataFromAPI();
+        }
+    }, [reload]);
 
     return (
         (items != null) ? 
             <div className="container">
                 <RankingGrid items={items} imgArr={imgArr} dragStartHandler={dragStartHandler} allowDrop={allowDrop} dropHandler={dropHandler} />
                 <ItemCollection items={items} dragStartHandler={dragStartHandler} imgArr={imgArr} />
+                <div className="center-container">
+                    <button className="btn btn-primary" onClick={Reload} style={{ "marginTop": "10px" }}>Reload</button>
+                </div>
             </div>
             : <div className = "container">Loading...</div>
     );
